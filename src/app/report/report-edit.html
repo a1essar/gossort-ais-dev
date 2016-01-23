@@ -1,0 +1,59 @@
+<ng-include src="'app/report/report-nav.html'" onload=""></ng-include>
+<div class="container-fluid">
+    <h1>Изменить отчет</h1>
+    <hr/>
+    <div class="report-status-bar">
+        <div class="panel panel-danger">
+            <div class="panel-heading">Отчет отменен</div>
+            <div class="panel-body">
+                <p>Причина: <b>нужен скан документа</b></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <form>
+                <ng-include ng-if="report.section == 'movables' && report.report == 1" src="'app/static/report-movables-1-form-edit.html'" onload=""></ng-include>
+            </form>
+            <div class="form-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button class="btn btn-primary">Изменить</button>&nbsp;
+                        <a class="btn btn-danger" data-toggle="modal" data-target=".js-remove-reason">Запрос на удаление</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <irontec-simple-chat
+        messages="report.messages"
+        username="report.vm.username"
+        input-placeholder-text="Сообщение"
+        submit-button-text="Отправить"
+        title="Обратная связь"
+        theme="irontec"
+        submit-function="report.sendMessage"
+        visible="true"
+        initial-state-hidden="true">
+    </irontec-simple-chat>
+</div>
+
+<div class="modal fade js-remove-reason" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Запрос на удаление</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label >Причина</label>
+                    <textarea class="form-control"  placeholder=""></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Отправить</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

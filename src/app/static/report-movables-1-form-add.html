@@ -1,0 +1,61 @@
+<div class="form-group">
+    <label>Филиал</label>
+    <p class="form-control-static">Белгородская область</p>
+</div>
+<div class="form-group has-warning">
+    <label >ГСУ</label>
+    <select class="form-control" ng-options="option for option in ['', 'Алексеевский ГСУ', 'Новооскольский ГСУ', 'Октябрьский ГСУ']" ng-model="reportData.field2" ng-init="reportData.field2 = 'Алексеевский ГСУ'" required>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Тип</label>
+    <input type="text" class="form-control"  placeholder="" value="" required>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Назначение</label>
+    <input type="text" class="form-control"  placeholder="" value="" required>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Марка и модель</label>
+    <input type="text" class="form-control"  placeholder="" value="" required>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group">
+    <label >Характеристика</label>
+    <textarea class="form-control"  placeholder=""></textarea>
+</div>
+<div class="form-group has-warning">
+    <label >Год изготовления</label>
+    <input type="text" class="form-control" ng-model="date" name="date" value="" placeholder="" required
+           datetimepicker
+           datetimepicker-options='{"format": "YYYY", "viewMode": "years", "locale": "ru"}'
+        />
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Работоспособность</label>
+    <select class="form-control" required>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group">
+    <label >Идентификационная информация</label>
+    <input type="text" class="form-control" value="" placeholder="">
+</div>
+<div class="form-group">
+    <label >Пояснения</label>
+    <textarea class="form-control"  placeholder=""></textarea>
+</div>
+<div class="form-group">
+    <label >Фотографии</label>
+    <input type="file" class="form-control" value=""  placeholder="">
+</div>
+<div class="form-group">
+    <label >Сканы документов</label>
+    <input type="file" class="form-control" value="" placeholder="">
+</div>

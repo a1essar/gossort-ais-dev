@@ -1,0 +1,12 @@
+<ng-include src="'app/report/report-nav.html'" onload=""></ng-include>
+<div class="container-fluid">
+    <h1>Список отчетов</h1>
+    <div class="table-responsive">
+        <table ng-table-dynamic="report.data with report.columns" show-filter="true" class="table table-striped">
+            <tr ng-repeat="row in $data track by row._id">
+                <td ng-repeat="column in $columns" title="'Тест'">{{::row[column.field]}}</td>
+                <td><a class="btn btn-default" ng-href="/#/report/{{report.section}}/{{report.report}}/edit/{{row._id}}"><i class="glyphicon glyphicon-pencil"></i></a></td>
+            </tr>
+        </table>
+    </div>
+</div>

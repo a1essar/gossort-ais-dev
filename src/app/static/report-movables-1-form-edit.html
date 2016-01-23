@@ -1,0 +1,65 @@
+<div class="form-group">
+    <label>Филиал</label>
+    <p class="form-control-static">{{reportData.field1}}</p>
+</div>
+<div class="form-group has-warning">
+    <label >ГСУ</label>
+    <select class="form-control" ng-options="option for option in ['Алексеевский ГСУ', 'Новооскольский ГСУ', 'Октябрьский ГСУ']" ng-model="reportData.field2" required>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Тип</label>
+    <select class="form-control" ng-options="option for option in formFieldsData.field3" ng-model="reportData.field3" required>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Назначение</label>
+    <select class="form-control" ng-options="option for option in formFieldsData.field4" ng-model="reportData.field4" required>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Марка и модель</label>
+    <select class="form-control" ng-options="option for option in formFieldsData.field5" ng-model="reportData.field5" required>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group">
+    <label >Характеристика</label>
+    <select class="form-control" ng-options="option for option in formFieldsData.field6" ng-model="reportData.field6" required>
+    </select>
+</div>
+<div class="form-group has-warning">
+    <label >Год изготовления</label>
+    <input type="text" class="form-control" ng-model="reportData.field7" name="date" value="{{reportData.field7}}" placeholder="" required
+           datetimepicker
+           datetimepicker-options='{"format": "YYYY", "viewMode": "years", "locale": "ru", "useCurrent": false, "defaultDate": false}'
+        />
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group has-warning">
+    <label >Работоспособность</label>
+    <select class="form-control" required>
+        <option value="Да">Да</option>
+        <option value="Нет">Нет</option>
+    </select>
+    <span class="help-block">Обязательное поле</span>
+</div>
+<div class="form-group">
+    <label >Идентификационная информация</label>
+    <input type="text" class="form-control" value="{{reportData.field9}}" placeholder="">
+</div>
+<div class="form-group">
+    <label >Пояснения</label>
+    <textarea class="form-control"  placeholder="">{{reportData.field10}}</textarea>
+</div>
+<div class="form-group">
+    <label >Фотографии</label>
+    <input type="file" class="form-control" value="{{reportData.field11}}"  placeholder="">
+</div>
+<div class="form-group">
+    <label >Сканы документов</label>
+    <input type="file" class="form-control" value="{{reportData.field12}}" placeholder="">
+</div>

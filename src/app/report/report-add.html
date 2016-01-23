@@ -1,0 +1,10 @@
+<ng-include src="'app/report/report-nav.html'" onload=""></ng-include>
+<div class="container-fluid">
+    <h1>Добавить новый отчет</h1>
+    <hr/>
+    <form>
+        <ng-include ng-if="report.section == 'movables' && report.report == 1" src="'app/static/report-movables-1-form-add.html'" onload=""></ng-include>
+
+        <button class="btn btn-primary">Добавить</button>
+    </form>
+</div>
