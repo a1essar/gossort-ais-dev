@@ -1,0 +1,490 @@
+<div class="container-fluid">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a ng-href="/#/section/production"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Список заявок</a></li>
+        <li role="presentation" class="active"><a ng-href="/#/section/production/add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить новую заявку</a></li>
+    </ul>
+</div>
+<div class="container-fluid">
+    <form class="form" novalidate>
+        <fieldset>
+            <legend>Общая информация</legend>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Кадастровый номер земельного участка</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['cadastral-number']" placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Адрес земельного участка</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['address']" placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>	Вид разрешенного использования</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['access-type']" placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Категория деятельности</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['activity-category']" placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Структура использования земель</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['land-structure']" placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Общая площадь земельного участка&nbsp;<small>кв.м.</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['area']" placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>	Дата</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="entry.common['date']" value="" placeholder="" required
+                                   datetimepicker
+                                   datetimepicker-options='{"format": "DD-MM-YYYY", "locale": "ru"}'
+                                />
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Плодово-виноградные: земли под сортопытами</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="table-wrap">
+                <table class="table table-striped">
+                    <caption>Добавленные культуры</caption>
+                    <thead>
+                    <tr>
+                        <th colspan="1" title="Кадастровый номер земельного участка">Кадастровый номер земельного участка</th>
+                        <th colspan="1">Площадь</th>
+                        <th colspan="1">Валовый сбор</th>
+                        <th colspan="1">Урожайность</th>
+                        <th colspan="1">Реализовано</th>
+                        <th colspan="1">Получено средств</th>
+                        <th colspan="1">Переходящий остаток</th>
+                        <th colspan="3">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="3">Использование удобрений</th>
+                                </tr>
+                                <tr>
+                                    <th>N</th>
+                                    <th>P</th>
+                                    <th>K</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th colspan="2">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="2">Число сортоопытов</th>
+                                </tr>
+                                <tr>
+                                    <th>план</th>
+                                    <th>факт</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th colspan="6">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="6">Гибель по причине</th>
+                                </tr>
+                                <tr>
+                                    <th>засуха</th>
+                                    <th>вымерзание</th>
+                                    <th>выперание</th>
+                                    <th>болезни</th>
+                                    <th>вредители</th>
+                                    <th>прочее</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in entry.fieldsets['fruit-grape-experiment'] track by $index">
+                        <td ng-repeat="item in row">{{item}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="fieldset['fruit-grape']['experiment']['culture']" placeholder="" value="" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Площадь <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="fieldset['fruit-grape']['experiment']['area']" placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Валовый сбор <small>ц</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Урожайность <small>ц/га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Реализовано <small>ц</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Получено средств <small>руб</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Переходящий остаток <small>ц</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Использование удобрений: N <small>кг/га по д.в.</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Использование удобрений: P <small>кг/га по д.в.</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Использование удобрений: K <small>кг/га по д.в.</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Число сортоопытов по плану <small>шт.</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Число сортоопытов по факту <small>шт.</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Гибель по причине: засуха <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Гибель по причине: вымерзание <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Гибель по причине: выперание <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Гибель по причине: поражение болезнями <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Гибель по причине: повреждение с/х вредителями <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Гибель по причине: прочее <small>га</small></label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fieldset__action">
+                <button class="btn btn-default" ng-click="production.addFieldsetItem('fruit-grape-experiment', fieldset['fruit-grape']['experiment']);"><span class="glyphicon glyphicon-plus"></span> Добавить</button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Плодово-виноградные: производство сельхозпродукции</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="table-wrap">
+                <table class="table table-striped">
+                    <caption>Добавленные культуры</caption>
+                    <thead>
+                    <tr>
+                        <th colspan="1" title="Кадастровый номер земельного участка">Кадастровый номер земельного участка</th>
+                        <th colspan="1">Площадь</th>
+                        <th colspan="1">Валовый сбор</th>
+                        <th colspan="1">Урожайность</th>
+                        <th colspan="1">Реализовано</th>
+                        <th colspan="1">Получено средств</th>
+                        <th colspan="1">Переходящий остаток</th>
+                        <th colspan="3">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="3">Использование удобрений</th>
+                                </tr>
+                                <tr>
+                                    <th>N</th>
+                                    <th>P</th>
+                                    <th>K</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th colspan="2">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="2">Число сортоопытов</th>
+                                </tr>
+                                <tr>
+                                    <th>план</th>
+                                    <th>факт</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </th>
+                        <th colspan="6">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="6">Гибель по причине</th>
+                                </tr>
+                                <tr>
+                                    <th>засуха</th>
+                                    <th>вымерзание</th>
+                                    <th>выперание</th>
+                                    <th>болезни</th>
+                                    <th>вредители</th>
+                                    <th>прочее</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control" ng-model="fieldset['fruit-grape']['production']['culture']" placeholder="" value="" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+            <div class="fieldset__action">
+                <button class="btn btn-default" ng-click="production.addFieldsetItem('fruit-grape-production', fieldset['fruit-grape']['production']);"><span class="glyphicon glyphicon-plus"></span> Добавить</button>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Плодово-виноградные: резервная площадь</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Сельскохозяйственные культуры: земли под сортопытами</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Сельскохозяйственные культуры: производство сельхозпродукции</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Сельскохозяйственные культуры: площадь под паром</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Сельскохозяйственные культуры: многолетние травы</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Теплицы: площадь под сортопытами</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Теплицы: производство сельхозпродукции</legend>
+            <span fieldset-toggle class="fieldset-toggle glyphicon glyphicon-minus" title="свернуть/развернуть"></span>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label>Культура</label>
+                        <div class="has-feedback">
+                            <input type="text" class="form-control"  placeholder="" value="" required>
+                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+        </fieldset>
+        <div class="form__action">
+            <button class="btn btn-primary" ng-click="production.add(entry);"><span class="glyphicon glyphicon-floppy-disk"></span> Отправить заявку</button>
+        </div>
+    </form>
+</div>

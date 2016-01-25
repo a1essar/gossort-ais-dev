@@ -1,0 +1,114 @@
+.form-group {
+    position: relative;
+}
+
+.form-control {
+}
+
+.form {
+    label {
+        small {
+            font-size: 65%;
+            font-weight: 400;
+            line-height: 1;
+            color: #777;
+        }
+    }
+
+    fieldset{
+        position: relative;
+        background: #FAFDFF;
+        border: 0;
+        padding: 10px;
+        margin: 0 auto 30px auto;
+        border-radius: 6px;
+
+        &:nth-of-type(odd) {
+            background: #FAFDFF;
+        }
+
+        &:nth-of-type(even) {
+            background: #F8FFF3;
+        }
+    }
+
+    legend {
+        display: inline-block;
+        width: auto;
+        color: #888888;
+        background: #ffffff;
+        border: 0;
+        padding: 0 20px 0 10px;
+        margin: 0 0 0 -10px;
+    }
+
+    .glyphicon-exclamation-sign {
+        color: #d7a826;
+    }
+
+    .form-control-feedback {
+        pointer-events: auto;
+    }
+
+    table {
+        thead table {
+            th {
+                padding: 8px 5px 8px 0;
+            }
+        }
+    }
+
+    th {
+    }
+
+    tr {
+
+    }
+
+    td {
+
+    }
+}
+
+.table-wrap {
+    overflow: auto;
+    margin: 0 auto 30px auto;
+
+    /* Let's get this party started */
+    &::-webkit-scrollbar {
+        cursor: pointer;
+        height: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+        border-radius: 6px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: #ccc;
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background: #ccc;
+    }
+}
+
+.fieldset-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background: #EFEFEF;
+    padding: 5px;
+    border-radius: 0 6px 0 0;
+}
+
+.form__action {
+    background: #FFFCD7;
+    padding: 15px;
+    margin: 0 auto 15px auto;
+    border-radius: 6px;
+}
