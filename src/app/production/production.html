@@ -4,6 +4,35 @@
         <li role="presentation"><a ng-href="/#/section/production/add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить новую заявку</a></li>
     </ul>
 </div>
-<div class="container-fluid">
-
+<div class="container-fluid entries-list">
+    <div class="table-wrap">
+        <table ng-table="tableParams" class="table table-hover" show-filter="true">
+            <tr class="pointer" ng-repeat="fields in $data" ng-click="production.toEdit(fields._id)">
+                <td title="'ГСУ'" filter="{ input8: 'text'}" sortable="'input8'">
+                    {{fields.input8}}
+                </td>
+                <td title="'Кадастровый номер'" filter="{ input1: 'text'}" sortable="'input1'">
+                    {{fields.input1}}
+                </td>
+                <td title="'Адрес земельного участка'" filter="{ input2: 'text'}" sortable="'input2'">
+                    {{fields.input2}}
+                </td>
+                <td title="'Вид разрешенного использования'" filter="{ input3: 'text'}" sortable="'input3'">
+                    {{fields.input3}}
+                </td>
+                <td title="'Категория деятельности и структура использования земель'" filter="{ input4: 'text'}" sortable="'input4'">
+                    <dl ng-repeat="(key, value) in fields.input4 | orderBy: 'category' | groupBy: 'category'">
+                        <dt>{{key}}</dt>
+                        <dd ng-repeat="field in value">{{field.value}}</dd>
+                    </dl>
+                </td>
+                <td title="'Общая площадь'" filter="{ input6: 'text'}" sortable="'input6'">
+                    {{fields.input6}}
+                </td>
+                <td title="'Дата'" filter="{ input7: 'text'}" sortable="'input7'">
+                    {{fields.input7}}
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

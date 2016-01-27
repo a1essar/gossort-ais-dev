@@ -13,13 +13,16 @@ export function NavbarDirective() {
     return directive;
 }
 
-let locationWrap;
+let locationWrap,
+    storageWrap;
 
 class NavbarController {
-    constructor ($scope, $location, appData) {
+    constructor ($scope, $location, $localStorage, appData) {
         'ngInject';
 
+        storageWrap = $scope.$storage = $localStorage;
         this.sitemap = $scope.sitemap = appData.sitemap;
+        //this.currentBranch = $scope.currentBranch = (storageWrap['commonData'].currentBranch) ? storageWrap['commonData'].currentBranch : storageWrap['commonData'].currentBranch = '';
 
         locationWrap = $location;
     }

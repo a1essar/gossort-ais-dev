@@ -20,7 +20,9 @@
     "moment": "~2.10.6",
     "ng-table": "~0.8.3",
     "angular-bootstrap-simple-chat": "https://github.com/a1essar/angular-bootstrap-simple-chat.git#my-enhancements",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "ngstorage": "~0.3.10",
+    "angular-filter": "~0.5.8"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"
@@ -55,16 +57,16 @@
         "src/css/themes.css"
       ]
     },
-      "fontawesome": {
-          "main": [
-              "css/font-awesome.css",
-              "fonts/fontawesome-webfont.woff",
-              "fonts/fontawesome-webfont.woff2",
-              "fonts/fontawesome-webfont.eot",
-              "fonts/fontawesome-webfont.svg",
-              "fonts/fontawesome-webfont.ttf"
-          ]
-      }
+    "fontawesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf"
+      ]
+    }
   },
   "resolutions": {
     "jquery": "~2.1.4",

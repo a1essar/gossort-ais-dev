@@ -9,14 +9,11 @@
                     <form>
                         <div class="form-group">
                             <label for="fromField1">Филиал</label>
-                            <select ng-model="login.branch" id="fromField1" class="form-control" name="branch">
-                                <option ng-repeat="branch in branchList" value="{{branch}}">{{branch}}</option>
-                            </select>
-                            <!-- /# -->
+                            <select id="fromField1" class="form-control" ng-options="option for option in branchList" ng-model="login.branch" ng-init="login.branch=branchList[0]"></select>
                         </div>
                         <div class="form-group">
                             <label for="fromField2">Пароль</label>
-                            <input ng-model="login.password" type="password" class="form-control" id="fromField2" placeholder="Пароль">
+                            <input id="fromField2" class="form-control" ng-model="login.password" ng-init="login.password='test'" type="password" placeholder="Пароль">
                         </div>
                         <button class="btn btn-primary" ng-click="login.submit(login)">Войти</button>
                         <!--&nbsp;<button class="btn btn-default">Войти как администратор</button>-->

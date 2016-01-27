@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <ul class="nav nav-pills">
         <li role="presentation"><a ng-href="/#/section/production"><i class="glyphicon glyphicon-th-list"></i>&nbsp;Список заявок</a></li>
-        <li role="presentation" class="active"><a ng-href="/#/section/production/add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить новую заявку</a></li>
+        <li role="presentation"><a ng-href="/#/section/production/add"><i class="glyphicon glyphicon-plus"></i>&nbsp;Добавить новую заявку</a></li>
     </ul>
 </div>
 <div class="container-fluid">
@@ -13,28 +13,28 @@
                     <div class="form-group">
                         <label>ГСУ</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option for option in ['', 'Алексеевский', 'Октябрьский']" ng-model="entry.common['input8']" ng-init="entry.common['input8']=''"></select>
+                            <select class="form-control" ng-options="option for option in ['', 'Алексеевский', 'Октябрьский']" ng-model="entry.common['input8']" ng-init="entry.common['input8']=entry.common['input8']"></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Кадастровый номер</label>
                         <div class="has-feedback">
-                            <input type="text" class="form-control" ng-model="entry.common['input1']" ng-init="entry.common['input1']=''" placeholder="" value="" required>
+                            <input type="text" class="form-control" ng-model="entry.common['input1']" ng-init="entry.common['input1']=entry.common['input1']" placeholder="" required>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Адрес земельного участка</label>
                         <div class="has-feedback">
-                            <input type="text" class="form-control" ng-model="entry.common['input2']" ng-init="entry.common['input2']=''" placeholder="" value="" required>
+                            <input type="text" class="form-control" ng-model="entry.common['input2']" ng-init="entry.common['input2']=entry.common['input2']" placeholder="" required>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Вид разрешенного использования</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option for option in ['', 'Для сортоиспытания сельскохозяйственных культур']" ng-model="entry.common['input3']" ng-init="entry.common['input3']=''"></select>
+                            <select class="form-control" ng-options="option for option in ['', 'Для сортоиспытания сельскохозяйственных культур']" ng-model="entry.common['input3']" ng-init="entry.common['input3']=entry.common['input3']"></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
@@ -43,14 +43,14 @@
                     <div class="form-group">
                         <label>Категория деятельности и структура использования земель</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option.value group by option.category for option in [{category: 'Плодово-виноградные', value: 'земли под сортопытами'}, {category: 'Плодово-виноградные', value: 'производство сельхозпродукции'}, {category: 'Сельскохозяйственные культуры', value: 'земли под сортопытами'}, {category: 'Сельскохозяйственные культуры', value: 'площадь под паром'}, {category: 'Теплицы', value: 'земли под сортопытами'}, {category: 'Теплицы', value: 'производство сельхозпродукции'}]" ng-model="entry.common['input4']" ng-init="entry.common['input4']=''" multiple></select>
+                            <select class="form-control" ng-options="option.value group by option.category for option in [{category: 'Плодово-виноградные', value: 'земли под сортопытами'}, {category: 'Плодово-виноградные', value: 'производство сельхозпродукции'}, {category: 'Сельскохозяйственные культуры', value: 'земли под сортопытами'}, {category: 'Сельскохозяйственные культуры', value: 'площадь под паром'}, {category: 'Теплицы', value: 'земли под сортопытами'}, {category: 'Теплицы', value: 'производство сельхозпродукции'}]" ng-model="entry.common['input4']" ng-init="entry.common['input4']=entry.common['input4']" multiple></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Общая площадь&nbsp;<small>кв.м.</small></label>
                         <div class="has-feedback">
-                            <input type="text" class="form-control" ng-model="entry.common['input6']" ng-init="entry.common['input6']=''" placeholder="" value="" required>
+                            <input type="text" class="form-control" ng-model="entry.common['input6']" ng-init="entry.common['input6']=entry.common['input6']" placeholder="" required>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="form-group">
                         <label>Дата</label>
                         <div class="has-feedback">
-                            <input type="text" class="form-control" ng-model="entry.common['input7']" ng-init="entry.common['input7']=''" value="" placeholder="" required
+                            <input type="text" class="form-control" ng-model="entry.common['input7']" ng-init="entry.common['input7']=entry.common['input7']" placeholder="" required
                                    datetimepicker
                                    datetimepicker-options='{"format": "DD-MM-YYYY", "locale": "ru"}'
                                 />
@@ -180,7 +180,7 @@
             </div>
         </fieldset>
         <div class="form__action">
-            <button class="btn btn-primary" type="submit" ng-click="production.add(entry);"><span class="glyphicon glyphicon-floppy-disk"></span> Добавить заявку</button>
+            <button class="btn btn-primary" type="submit" ng-click="production.edit(entry._id, entry);"><span class="glyphicon glyphicon-floppy-disk"></span> Изменить заявку</button>
         </div>
     </form>
 </div>
