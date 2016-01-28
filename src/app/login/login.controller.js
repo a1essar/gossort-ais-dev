@@ -6,7 +6,10 @@ export class LoginController {
         'ngInject';
 
         this.sitemap = appData.sitemap;
-        this.branchList = $scope.branchList = appData.branchList;
+        appData.branchList.then((data) => {
+            $scope.branchList = data;
+            $scope.login.branch = $scope.branchList[0];
+        });
 
         storageWrap = $scope.$storage = $localStorage;
         storageWrap.$default({

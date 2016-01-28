@@ -2,8 +2,10 @@ let storageWrap,
     locationWrap;
 
 export class ProductionController {
-    constructor ($scope, $location, $localStorage, $routeParams, NgTableParams) {
+    constructor ($scope, $location, $localStorage, $routeParams, NgTableParams, appData) {
         'ngInject';
+
+        this.$scope = $scope;
 
         locationWrap = $location;
 
@@ -24,6 +26,11 @@ export class ProductionController {
         }, {
             filterDelay: 0,
             data: this.getList(this.entries)
+        });
+
+        appData.gsuList.then((data) => {
+            this.gsu = $scope.gsu = data;
+            this.updateCurrentGsu(data);
         });
     }
 
@@ -87,5 +94,24 @@ export class ProductionController {
 
     toEdit(id) {
         locationWrap.path('/section/production/' + id);
+    }
+
+    updateCurrentGsu(data) {
+        data = data || this.gsu;
+
+        let currentData = [],
+            currentBranch = storageWrap['commonData'].currentBranch;
+
+        data.forEach((el, i) => {
+            if (el.branch === currentBranch) {
+                currentData.push(el.gsu);
+            }
+        });
+
+        this.gsuList = this.$scope.gsuList = currentData;
+
+        if (this.entry.common) {
+            this.entry.common['input8'] = this.gsuList[0];
+        }
     }
 }

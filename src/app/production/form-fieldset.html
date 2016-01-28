@@ -82,14 +82,14 @@
         <div class="form-group">
             <label>Культура</label>
             <div class="has-feedback">
-                <select class="form-control" ng-options="option for option in ['Культура 1', 'Культура 2', 'Культура 3']" ng-model="fieldset['input1']" ng-init="fieldset['input1']='Культура 1'"></select>
+                <select class="form-control" ng-change="formFieldset.changeCultures()" ng-options="option for option in culturesList track by option" ng-model="fieldset['input1']" ng-init="fieldset['input1']=''"></select>
                 <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
             </div>
         </div>
         <div class="form-group">
             <label>Сорт</label>
             <div class="has-feedback">
-                <select class="form-control" ng-options="option for option in ['Сорт 1', 'Сорт 2', 'Сорт 3']" ng-model="fieldset['input2']" ng-init="fieldset['input2']='Сорт 1'"></select>
+                <select class="form-control" ng-options="option for option in cultivarsList track by option" ng-model="fieldset['input2']" ng-init="fieldset['input2']=''"></select>
                 <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
             </div>
         </div>

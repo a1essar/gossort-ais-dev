@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label>ГСУ</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option for option in ['', 'Алексеевский', 'Октябрьский']" ng-model="entry.common['input8']" ng-init="entry.common['input8']=''"></select>
+                            <select class="form-control" ng-options="option for option in gsuList track by option" ng-model="entry.common['input8']" ng-init="entry.common['input8']=''"></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
@@ -71,21 +71,21 @@
         </fieldset>
         <fieldset>
             <legend>Плодово-виноградные: земли под сортопытами</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset1 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset1=!toggleFieldset1" ng-init="toggleFieldset1=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset1 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset1=!toggleFieldset1" ng-init="toggleFieldset1=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset1">
                 <form-fieldset data-model="entry.fieldsets['fruit-grape-experiment']"></form-fieldset>
             </div>
         </fieldset>
         <fieldset>
             <legend>Плодово-виноградные: производство сельхозпродукции</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset2 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset2=!toggleFieldset2" ng-init="toggleFieldset2=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset2 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset2=!toggleFieldset2" ng-init="toggleFieldset2=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset2">
                 <form-fieldset data-model="entry.fieldsets['fruit-grape-production']"></form-fieldset>
             </div>
         </fieldset>
         <fieldset>
             <legend>Плодово-виноградные: резервная площадь</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset3 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset3=!toggleFieldset3" ng-init="toggleFieldset3=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset3 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset3=!toggleFieldset3" ng-init="toggleFieldset3=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset3">
                 <div class="row">
                     <div class="col-sm-4">
@@ -101,21 +101,21 @@
         </fieldset>
         <fieldset>
             <legend>Сельскохозяйственные культуры: земли под сортопытами</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset4 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset4=!toggleFieldset4" ng-init="toggleFieldset4=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset4 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset4=!toggleFieldset4" ng-init="toggleFieldset4=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset4">
                 <form-fieldset data-model="entry.fieldsets['agricultural-experiment']"></form-fieldset>
             </div>
         </fieldset>
         <fieldset>
             <legend>Сельскохозяйственные культуры: производство сельхозпродукции</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset5 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset5=!toggleFieldset5" ng-init="toggleFieldset5=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset5 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset5=!toggleFieldset5" ng-init="toggleFieldset5=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset5">
                 <form-fieldset data-model="entry.fieldsets['agricultural-production']"></form-fieldset>
             </div>
         </fieldset>
         <fieldset>
             <legend>Сельскохозяйственные культуры: площадь под паром</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset6 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset6=!toggleFieldset6" ng-init="toggleFieldset6=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset6 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset6=!toggleFieldset6" ng-init="toggleFieldset6=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset6">
                 <div class="row">
                     <div class="col-sm-4">
@@ -151,7 +151,7 @@
         </fieldset>
         <fieldset>
             <legend>Сельскохозяйственные культуры: многолетние травы</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset7 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset7=!toggleFieldset7" ng-init="toggleFieldset7=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset7 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset7=!toggleFieldset7" ng-init="toggleFieldset7=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset7">
                 <div class="row">
                     <div class="col-sm-4">
@@ -167,14 +167,14 @@
         </fieldset>
         <fieldset>
             <legend>Теплицы: площадь под сортопытами</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset8 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset8=!toggleFieldset8" ng-init="toggleFieldset8=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset8 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset8=!toggleFieldset8" ng-init="toggleFieldset8=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset8">
                 <form-fieldset data-model="entry.fieldsets['greenhouse-experiment']"></form-fieldset>
             </div>
         </fieldset>
         <fieldset>
             <legend>Теплицы: производство сельхозпродукции</legend>
-            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset9 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset9=!toggleFieldset9" ng-init="toggleFieldset9=true" title="свернуть/развернуть"></span>
+            <span class="fieldset-toggle toggle-btn glyphicon" ng-class="toggleFieldset9 ? 'glyphicon-minus' : 'glyphicon-plus'" ng-click="toggleFieldset9=!toggleFieldset9" ng-init="toggleFieldset9=false" title="свернуть/развернуть"></span>
             <div class="toggle-wrap" ng-show="toggleFieldset9">
                 <form-fieldset data-model="entry.fieldsets['greenhouse-production']"></form-fieldset>
             </div>

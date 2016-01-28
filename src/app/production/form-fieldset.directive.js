@@ -19,13 +19,30 @@ export function formFieldsetDirective() {
     }
 }
 
-let locationWrap;
+let qWrap;
 
 class FormFieldsetController {
-    constructor ($scope) {
+    constructor ($scope, $q, appData) {
         'ngInject';
 
+        qWrap = $q;
+        this.$scope = $scope;
+
         this.model = ($scope.formFieldset.model) ? $scope.formFieldset.model : $scope.formFieldset.model = [];
+        this.fieldset = $scope.fieldset = {};
+
+        appData.culturesList.then((data) => {
+            this.culturesList = $scope.culturesList = data;
+            this.fieldset['input1'] = this.culturesList[0];
+        });
+
+        appData.cultivarsList.then((data) => {
+            this.cultivars = $scope.cultivars = data;
+            this.updateCurrentCultivars(data).then((data) => {
+                this.cultivarsList = $scope.cultivarsList = data;
+                this.fieldset['input2'] = this.cultivarsList[0];
+            });
+        });
     }
 
     add (fieldset) {
@@ -54,13 +71,40 @@ class FormFieldsetController {
         let total = 0;
 
         /*elements.map((key, el) => {
-            let value = angular.element(el).text();
+         let value = angular.element(el).text();
 
-            if (!isNaN(value)) {
-                total += parseInt(value, 10);
-            }
-        });*/
+         if (!isNaN(value)) {
+         total += parseInt(value, 10);
+         }
+         });*/
 
         return total;
+    }
+
+    updateCurrentCultivars(data) {
+        data = data || this.cultivars;
+
+        let currentData = [],
+            currentCulture = this.fieldset['input1'] || this.culturesList[0],
+            deferred = qWrap.defer();
+
+        data.forEach((el, i) => {
+            if (el.culture === currentCulture) {
+                currentData.push(el.cultivar);
+            }
+
+            if (data.length === i + 1) {
+                deferred.resolve(currentData);
+            }
+        });
+
+        return deferred.promise;
+    }
+
+    changeCultures() {
+        this.updateCurrentCultivars().then((data) => {
+            this.$scope.cultivarsList = data;
+            this.fieldset['input2'] = this.$scope.cultivarsList[0];
+        });
     }
 }
