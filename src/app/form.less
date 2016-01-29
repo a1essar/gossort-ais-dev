@@ -2,8 +2,18 @@
     position: relative;
 }
 
-.has-feedback select.form-control + .form-control-feedback {
-    right: 10px;
+.has-feedback select.form-control + .form-control-feedback,
+.has-feedback .select2-container + .form-control-feedback,
+.has-feedback .ui-select-container + .form-control-feedback {
+    right: 15px;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-selection--single {
+    height: 35px !important;
 }
 
 .form {

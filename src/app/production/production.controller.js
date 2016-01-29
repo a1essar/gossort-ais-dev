@@ -32,6 +32,10 @@ export class ProductionController {
             this.gsu = $scope.gsu = data;
             this.updateCurrentGsu(data);
         });
+
+        appData.production.then((data) => {
+            this.productionConfig = $scope.productionConfig = data;
+        });
     }
 
     getList(entries) {

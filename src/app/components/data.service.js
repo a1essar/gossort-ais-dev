@@ -12,6 +12,7 @@ export class dataService {
         this.gsuList = this.loadData('./assets/json/gsuList.json');
         this.culturesList = this.loadData('./assets/json/culturesFromCultivars.json');
         this.cultivarsList = this.loadData('./assets/json/cultivars.json');
+        this.production = this.loadData('./assets/json/production.json');
 
         this.sitemap = [
             {
@@ -33,11 +34,9 @@ export class dataService {
 
         httpWrap.get(file)
             .then((response) => {
-                if (response.data.length > 0) {
-                    deferred.resolve(response.data);
-                } else {
-                    deferred.reject();
-                }
+                deferred.resolve(response.data);
+            }, (response) => {
+                deferred.reject();
             });
 
         return deferred.promise;

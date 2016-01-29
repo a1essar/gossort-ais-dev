@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label>ГСУ</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option for option in gsuList track by option" ng-init="entry.common['input8']=entry.common['input8']"></select>
+                            <select class="form-control" select2 data-lazy-init="entry.common['input8']" ng-options="option for option in gsuList track by option" ng-model="entry.common['input8']" ng-init="entry.common['input8']=entry.common['input8']"></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label>Категория деятельности и структура использования земель</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option.value group by option.category for option in [{category: 'Плодово-виноградные', value: 'земли под сортопытами'}, {category: 'Плодово-виноградные', value: 'производство сельхозпродукции'}, {category: 'Сельскохозяйственные культуры', value: 'земли под сортопытами'}, {category: 'Сельскохозяйственные культуры', value: 'площадь под паром'}, {category: 'Теплицы', value: 'земли под сортопытами'}, {category: 'Теплицы', value: 'производство сельхозпродукции'}]" ng-model="entry.common['input4']" ng-init="entry.common['input4']=entry.common['input4']" multiple></select>
+                            <select class="form-control" select2 data-lazy-init="entry.common['input4']" multiple="multiple" ng-options="option.value group by option.category for option in productionConfig['category-activity']" ng-model="entry.common['input4']" ng-init="entry.common['input4']=entry.common['input4']" multiple></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
