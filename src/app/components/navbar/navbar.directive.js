@@ -5,26 +5,28 @@ export function NavbarDirective() {
         restrict: 'E',
         templateUrl: 'app/components/navbar/navbar.html',
         scope: {},
+        link: link,
         controller: NavbarController,
         controllerAs: 'navbar',
         bindToController: true
     };
 
     return directive;
+
+    function link() {
+    }
 }
 
-let locationWrap,
-    storageWrap;
+let locationWrap;
 
 class NavbarController {
-    constructor ($scope, $location, $localStorage, appData) {
+    constructor ($scope, $rootScope, $location, appData) {
         'ngInject';
 
-        storageWrap = $scope.$storage = $localStorage;
-        this.sitemap = $scope.sitemap = appData.sitemap;
-        //this.currentBranch = $scope.currentBranch = (storageWrap['commonData'].currentBranch) ? storageWrap['commonData'].currentBranch : storageWrap['commonData'].currentBranch = '';
-
         locationWrap = $location;
+
+        this.sitemap = $scope.sitemap = appData.sitemap;
+        this.commonData = $scope.commonData = $rootScope.commonData;
     }
 
     isActive(item) {

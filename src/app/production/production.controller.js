@@ -2,7 +2,7 @@ let storageWrap,
     locationWrap;
 
 export class ProductionController {
-    constructor ($scope, $location, $localStorage, $routeParams, NgTableParams, appData) {
+    constructor ($scope, $rootScope, $location, $localStorage, $routeParams, NgTableParams, appData) {
         'ngInject';
 
         this.$scope = $scope;
@@ -16,6 +16,8 @@ export class ProductionController {
                 'data': []
             }
         });
+
+        this.commonData = $rootScope.commonData;
 
         this.entries = $scope.entries = storageWrap['production']['data'];
         this.entry = $scope.entry = ($routeParams.id) ? this.getEntry($routeParams.id, this.entries) : {};
@@ -42,7 +44,7 @@ export class ProductionController {
         let data = angular.copy(entries);
 
         data = data.filter((el) => {
-            return el.common.branch === storageWrap['commonData'].currentBranch;
+            return el.common.branch === this.commonData.currentBranch;
         });
 
         data = Object.keys(data).map((key) => {
@@ -69,7 +71,7 @@ export class ProductionController {
 
         /* data manipulation */
         obj._id = storageWrap['production']['increment']++;
-        obj.common.branch = storageWrap['commonData'].currentBranch;
+        obj.common.branch = this.commonData.currentBranch;
 
         this.entries.push(obj);
 
@@ -104,7 +106,7 @@ export class ProductionController {
         data = data || this.gsu;
 
         let currentData = [],
-            currentBranch = storageWrap['commonData'].currentBranch;
+            currentBranch = this.commonData.currentBranch;
 
         data.forEach((el, i) => {
             if (el.branch === currentBranch) {
