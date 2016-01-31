@@ -11,7 +11,7 @@ import { NavbarDirective } from './components/navbar/navbar.directive';
 import { select2Directive } from './components/select2.directive';
 import { dataService } from './components/data.service';
 
-angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'datetimepicker', 'irontec.simpleChat', 'ui.select'])
+angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'datetimepicker', 'irontec.simpleChat'])
     .config(config)
     .config(routerConfig)
     .run(runBlock)
