@@ -3,7 +3,7 @@ let storageWrap,
     lodashWrap;
 
 export class ProductionController {
-    constructor ($scope, $rootScope, $location, $localStorage, $routeParams, NgTableParams, appData) {
+    constructor ($scope, $rootScope, $location, $localStorage, $routeParams, moment, NgTableParams, appData) {
         'ngInject';
 
         this.$scope = $scope;
@@ -21,8 +21,11 @@ export class ProductionController {
         this.commonData = $rootScope.commonData;
 
         this.entries = $scope.entries = storageWrap['production']['data'];
-        this.entry = $scope.entry = ($routeParams.id) ? this.getEntry($routeParams.id, this.entries) : {};
         this.tableData = $scope.tableData = this.getList(this.entries);
+        this.entry = $scope.entry = ($routeParams.id) ? this.getEntry($routeParams.id, this.entries) : {};
+
+        // default date for new entry
+        this.currentDate = $scope.currentDate = moment().format('DD-MM-YYYY');
 
         this.tableParams = $scope.tableParams = new NgTableParams({
             page: 1, // show first page
@@ -116,10 +119,8 @@ export class ProductionController {
             }
         });
 
-        this.gsuList = this.$scope.gsuList = currentData;
+        currentData.push('');
 
-        if (this.entry.common) {
-            this.entry.common['input8'] = this.gsuList[0];
-        }
+        this.gsuList = this.$scope.gsuList = currentData;
     }
 }

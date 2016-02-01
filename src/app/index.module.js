@@ -9,9 +9,11 @@ import { formFieldsetDirective } from './production/form-fieldset.directive';
 import { LoginController } from './login/login.controller';
 import { NavbarDirective } from './components/navbar/navbar.directive';
 import { select2Directive } from './components/select2.directive';
+import { datepickerDirective } from './components/datepicker.directive';
 import { dataService } from './components/data.service';
 
-angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'datetimepicker', 'irontec.simpleChat'])
+angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'irontec.simpleChat'])
+    .constant('moment', window.moment)
     .constant('$', window.$)
     .constant('_', window._)
     .config(config)
@@ -23,4 +25,5 @@ angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize
     .controller('LoginController', LoginController)
     .directive('aisNavbar', NavbarDirective)
     .directive('select2', select2Directive)
+    .directive('datepicker', datepickerDirective)
     .service('appData', dataService);

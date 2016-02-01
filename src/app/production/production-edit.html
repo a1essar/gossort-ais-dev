@@ -60,8 +60,9 @@
                         <label>Дата</label>
                         <div class="has-feedback">
                             <input type="text" class="form-control" ng-model="entry.common['input7']" ng-init="entry.common['input7']=entry.common['input7']" placeholder="" required
-                                   datetimepicker
-                                   datetimepicker-options='{"format": "DD-MM-YYYY", "locale": "ru"}'
+                                   datepicker
+                                   datepicker-options='{"format": "dd-mm-yyyy"}'
+                                   datepicker-date="entry.common['input7']"
                                 />
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
