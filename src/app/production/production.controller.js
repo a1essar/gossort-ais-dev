@@ -1,5 +1,6 @@
 let storageWrap,
-    locationWrap;
+    locationWrap,
+    lodashWrap;
 
 export class ProductionController {
     constructor ($scope, $rootScope, $location, $localStorage, $routeParams, NgTableParams, appData) {
@@ -21,13 +22,14 @@ export class ProductionController {
 
         this.entries = $scope.entries = storageWrap['production']['data'];
         this.entry = $scope.entry = ($routeParams.id) ? this.getEntry($routeParams.id, this.entries) : {};
+        this.tableData = $scope.tableData = this.getList(this.entries);
 
         this.tableParams = $scope.tableParams = new NgTableParams({
             page: 1, // show first page
             count: 10 // count per page
         }, {
             filterDelay: 0,
-            data: this.getList(this.entries)
+            data: this.tableData
         });
 
         appData.gsuList.then((data) => {

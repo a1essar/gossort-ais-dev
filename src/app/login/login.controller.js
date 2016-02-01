@@ -10,7 +10,6 @@ export class LoginController {
             $scope.login.branch = $scope.branchList[0];
         });
 
-        this.sitemap = appData.sitemap;
         this.commonData = $rootScope.commonData;
 
         locationWrap = $location;

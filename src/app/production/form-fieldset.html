@@ -6,17 +6,77 @@
                 <th colspan="1"></th>
                 <th colspan="1" title="Культура">Культура</th>
                 <th colspan="1">Сорт</th>
-                <th colspan="1">Площадь</th>
-                <th colspan="1">Валовый сбор</th>
-                <th colspan="1">Урожайность</th>
-                <th colspan="1">Реализовано</th>
-                <th colspan="1">Получено средств</th>
-                <th colspan="1">Переходящий остаток</th>
-                <th colspan="3">
+                <th colspan="1">Площадь&nbsp;<small>га</small></th>
+                <th class="nopadding" colspan="2">
                     <table>
                         <thead>
                         <tr>
-                            <th colspan="3">Использование удобрений</th>
+                            <th colspan="2">Валовый сбор&nbsp;<small>ц</small></th>
+                        </tr>
+                        <tr>
+                            <th>план</th>
+                            <th>факт</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </th>
+                <th class="nopadding" colspan="2">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="2">Урожайность&nbsp;<nobr><small>ц/га</small></nobr></th>
+                        </tr>
+                        <tr>
+                            <th>план</th>
+                            <th>факт</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </th>
+                <th class="nopadding" colspan="2">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="2">Реализовано&nbsp;<nobr><small>ц</small></nobr></th>
+                        </tr>
+                        <tr>
+                            <th>план</th>
+                            <th>факт</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </th>
+                <th class="nopadding" colspan="2">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="2">Получено средств&nbsp;<nobr><small>руб</small></nobr></th>
+                        </tr>
+                        <tr>
+                            <th>план</th>
+                            <th>факт</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </th>
+                <th class="nopadding" colspan="2">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="2">Переходящий остаток&nbsp;<nobr><small>ц</small></nobr></th>
+                        </tr>
+                        <tr>
+                            <th>план</th>
+                            <th>факт</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </th>
+                <th class="nopadding" colspan="3">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="3">Использование удобрений&nbsp;<nobr><small>кг/га по д.в.</small></nobr></th>
                         </tr>
                         <tr>
                             <th>N</th>
@@ -26,11 +86,11 @@
                         </thead>
                     </table>
                 </th>
-                <th colspan="2">
+                <th class="nopadding" colspan="2">
                     <table>
                         <thead>
                         <tr>
-                            <th colspan="2">Число сортоопытов</th>
+                            <th colspan="2">Число сортоопытов&nbsp;<nobr><small>шт</small></nobr></th>
                         </tr>
                         <tr>
                             <th>план</th>
@@ -39,11 +99,11 @@
                         </thead>
                     </table>
                 </th>
-                <th colspan="6">
+                <th class="nopadding" colspan="6">
                     <table>
                         <thead>
                         <tr>
-                            <th colspan="6">Гибель по причине</th>
+                            <th colspan="6">Гибель по причине&nbsp;<nobr><small>га</small></nobr></th>
                         </tr>
                         <tr>
                             <th>засуха</th>
@@ -64,15 +124,34 @@
                     <!--<span class="glyphicon glyphicon-pencil"></span>-->
                     <span class="pointer glyphicon glyphicon-remove" ng-click="formFieldset.remove($index)"></span>
                 </td>
-                <td ng-repeat="item in row track by $index" data-total-value="{{$index}}">{{item}}</td>
+                <td ng-repeat="item in row track by $index">{{item}}</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>Итог:</td>
-                <td></td>
-                <td></td>
-                <td>{{formFieldset.getTotal(2)}}</td>
+                <td colspan="3"></td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input3')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input4')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input5')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input6')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input7')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input8')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input9')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input10')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input11')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input12')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input13')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input14')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input15')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input16')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input17')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input18')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input19')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input20')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input21')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input22')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input23')}}</td>
+                <td>{{$root._.arraySumByField(formFieldset.model, 'input24')}}</td>
             </tr>
         </tfoot>
     </table>
@@ -102,101 +181,120 @@
         <div class="form-group">
             <label>Валовый сбор <small>ц</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input4']" ng-init="fieldset['input4']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input4']" ng-init="fieldset['input4']=''" placeholder="План" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input5']" ng-init="fieldset['input5']=''" placeholder="Факт" value="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label>Урожайность <small>ц/га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input5']" ng-init="fieldset['input5']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input6']" ng-init="fieldset['input6']=''" placeholder="План" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input7']" ng-init="fieldset['input7']=''" placeholder="Факт" value="">
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="col-sm-4">
         <div class="form-group">
             <label>Реализовано <small>ц</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input6']" ng-init="fieldset['input6']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input8']" ng-init="fieldset['input8']=''" placeholder="План" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input9']" ng-init="fieldset['input9']=''" placeholder="Факт" value="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <label>Получено средств <small>руб</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input7']" ng-init="fieldset['input7']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input10']" ng-init="fieldset['input10']=''" placeholder="План" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input11']" ng-init="fieldset['input11']=''" placeholder="Факт" value="">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-sm-4">
         <div class="form-group">
             <label>Переходящий остаток <small>ц</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input8']" ng-init="fieldset['input8']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input12']" ng-init="fieldset['input12']=''" placeholder="План" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input13']" ng-init="fieldset['input13']=''" placeholder="Факт" value="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
-            <label>Использование удобрений: N <small>кг/га по д.в.</small></label>
+            <label>Использование удобрений <small>кг/га по д.в.</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input9']" ng-init="fieldset['input9']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" ng-model="fieldset['input14']" ng-init="fieldset['input14']=''" placeholder="N" value="">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" ng-model="fieldset['input15']" ng-init="fieldset['input15']=''" placeholder="P" value="">
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" ng-model="fieldset['input16']" ng-init="fieldset['input16']=''" placeholder="K" value="">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
-            <label>Использование удобрений: P <small>кг/га по д.в.</small></label>
+            <label>Число сортоопытов <small>шт.</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input10']" ng-init="fieldset['input10']=''" placeholder="" value="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Использование удобрений: K <small>кг/га по д.в.</small></label>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input11']" ng-init="fieldset['input11']=''" placeholder="" value="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Число сортоопытов по плану <small>шт.</small></label>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input12']" ng-init="fieldset['input12']=''" placeholder="" value="">
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Число сортоопытов по факту <small>шт.</small></label>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input13']" ng-init="fieldset['input13']=''" placeholder="" value="">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input17']" ng-init="fieldset['input17']=''" placeholder="План" value="">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" ng-model="fieldset['input18']" ng-init="fieldset['input18']=''" placeholder="Факт" value="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="form-group">
-            <label>Гибель по причине: засуха <small>га</small></label>
+            <label>Гибель по причине <small>га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input14']" ng-init="fieldset['input14']=''" placeholder="" value="">
+                <input type="text" class="form-control" ng-model="fieldset['input19']" ng-init="fieldset['input19']=''" placeholder="засуха" value="">
             </div>
-        </div>
-        <div class="form-group">
-            <label>Гибель по причине: вымерзание <small>га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input15']" ng-init="fieldset['input15']=''" placeholder="" value="">
+                <input type="text" class="form-control" ng-model="fieldset['input20']" ng-init="fieldset['input20']=''" placeholder="вымерзание" value="">
             </div>
-        </div>
-        <div class="form-group">
-            <label>Гибель по причине: выперание <small>га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input16']" ng-init="fieldset['input16']=''" placeholder="" value="">
+                <input type="text" class="form-control" ng-model="fieldset['input21']" ng-init="fieldset['input21']=''" placeholder="выперание" value="">
             </div>
-        </div>
-        <div class="form-group">
-            <label>Гибель по причине: поражение болезнями <small>га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input17']" ng-init="fieldset['input17']=''" placeholder="" value="">
+                <input type="text" class="form-control" ng-model="fieldset['input22']" ng-init="fieldset['input22']=''" placeholder="поражение болезнями" value="">
             </div>
-        </div>
-        <div class="form-group">
-            <label>Гибель по причине: повреждение с/х вредителями <small>га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input18']" ng-init="fieldset['input18']=''" placeholder="" value="">
+                <input type="text" class="form-control" ng-model="fieldset['input23']" ng-init="fieldset['input23']=''" placeholder="повреждение с/х вредителями" value="">
             </div>
-        </div>
-        <div class="form-group">
-            <label>Гибель по причине: прочее <small>га</small></label>
             <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input19']" ng-init="fieldset['input19']=''" placeholder="" value="">
+                <input type="text" class="form-control" ng-model="fieldset['input24']" ng-init="fieldset['input24']=''" placeholder="прочее" value="">
             </div>
         </div>
     </div>

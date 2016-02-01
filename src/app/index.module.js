@@ -12,6 +12,8 @@ import { select2Directive } from './components/select2.directive';
 import { dataService } from './components/data.service';
 
 angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'datetimepicker', 'irontec.simpleChat'])
+    .constant('$', window.$)
+    .constant('_', window._)
     .config(config)
     .config(routerConfig)
     .run(runBlock)

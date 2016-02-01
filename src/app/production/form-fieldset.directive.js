@@ -3,7 +3,9 @@ export function formFieldsetDirective() {
 
     let directive = {
         restrict: 'E',
-        templateUrl: 'app/production/form-fieldset.html',
+        templateUrl: function(el, attr) {
+            return 'app/production/form-fieldset.html'
+        },
         scope: {
             model: '='
         },
@@ -22,7 +24,7 @@ export function formFieldsetDirective() {
 let qWrap;
 
 class FormFieldsetController {
-    constructor ($scope, $q, appData) {
+    constructor ($scope, $rootScope, $q, appData) {
         'ngInject';
 
         qWrap = $q;
@@ -64,21 +66,6 @@ class FormFieldsetController {
 
     remove (id) {
         this.model.splice(id, 1);
-    }
-
-    getTotal(id) {
-        let elements = angular.element('[data-total-value="' + id + '"]');
-        let total = 0;
-
-        /*elements.map((key, el) => {
-         let value = angular.element(el).text();
-
-         if (!isNaN(value)) {
-         total += parseInt(value, 10);
-         }
-         });*/
-
-        return total;
     }
 
     updateCurrentCultivars(data) {
