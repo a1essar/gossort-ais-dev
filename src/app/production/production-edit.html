@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label>Общая площадь&nbsp;<small>кв.м.</small></label>
                         <div class="has-feedback">
-                            <input type="text" class="form-control" ng-model="entry.common['input6']" ng-init="entry.common['input6']=entry.common['input6']" placeholder="" required>
+                            <input type="text" class="form-control" name="input6" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="entry.common['input6']" ng-init="entry.common['input6']=entry.common['input6']" placeholder="" required>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         <div class="form-group">
                             <label>Резервная площадь <small>га</small></label>
                             <div class="has-feedback">
-                                <input type="text" class="form-control" ng-model="entry.fieldsets['fruit-grape-reserve']['input1']" ng-init="entry.fieldsets['fruit-grape-reserve']['input1']=''" placeholder="" value="">
+                                <input type="text" class="form-control" name="fruit-grape-reserve-input1" input-mask ng-pattern="'^[ 0-9]+$'"  ng-model="entry.fieldsets['fruit-grape-reserve']['input1']" ng-init="entry.fieldsets['fruit-grape-reserve']['input1']=''" placeholder="" value="">
                             </div>
                         </div>
                     </div>
@@ -121,13 +121,13 @@
                         <div class="form-group">
                             <label>Под чистыми парами <small>га</small></label>
                             <div class="has-feedback">
-                                <input type="text" class="form-control" ng-model="entry.fieldsets['agricultural-fallow']['input1']" ng-init="entry.fieldsets['agricultural-fallow']['input1']=''" placeholder="" value="">
+                                <input type="text" class="form-control" name="agricultural-fallow-input1" input-mask ng-pattern="'^[ 0-9]+$'"  ng-model="entry.fieldsets['agricultural-fallow']['input1']" ng-init="entry.fieldsets['agricultural-fallow']['input1']=''" placeholder="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Засоренные: кустаник <small>га</small></label>
                             <div class="has-feedback">
-                                <input type="text" class="form-control" ng-model="entry.fieldsets['agricultural-fallow']['input2']" ng-init="entry.fieldsets['agricultural-fallow']['input2']=''" placeholder="" value="">
+                                <input type="text" class="form-control" name="agricultural-fallow-input2" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="entry.fieldsets['agricultural-fallow']['input2']" ng-init="entry.fieldsets['agricultural-fallow']['input2']=''" placeholder="" value="">
                             </div>
                         </div>
                     </div>
@@ -135,13 +135,13 @@
                         <div class="form-group">
                             <label>Засоренные: ДКР <small>га</small></label>
                             <div class="has-feedback">
-                                <input type="text" class="form-control" ng-model="entry.fieldsets['agricultural-fallow']['input3']" ng-init="entry.fieldsets['agricultural-fallow']['input3']=''" placeholder="" value="">
+                                <input type="text" class="form-control" name="agricultural-fallow-input3" input-mask ng-pattern="'^[ 0-9]+$'"  ng-model="entry.fieldsets['agricultural-fallow']['input3']" ng-init="entry.fieldsets['agricultural-fallow']['input3']=''" placeholder="" value="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Засоренные: лес <small>га</small></label>
                             <div class="has-feedback">
-                                <input type="text" class="form-control" ng-model="entry.fieldsets['agricultural-fallow']['input4']" ng-init="entry.fieldsets['agricultural-fallow']['input4']=''" placeholder="" value="">
+                                <input type="text" class="form-control" name="agricultural-fallow-input4" input-mask ng-pattern="'^[ 0-9]+$'"  ng-model="entry.fieldsets['agricultural-fallow']['input4']" ng-init="entry.fieldsets['agricultural-fallow']['input4']=''" placeholder="" value="">
                             </div>
                         </div>
                     </div>
