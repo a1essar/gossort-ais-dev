@@ -25,7 +25,12 @@ export class ProductionController {
         this.entry = $scope.entry = ($routeParams.id) ? this.getEntry($routeParams.id, this.entries) : {};
 
         // default date for new entry
-        this.currentDate = $scope.currentDate = moment().format('DD-MM-YYYY');
+        $scope.currentDate = moment().format('DD-MM-YYYY');
+
+        // show message when success
+        this.formState = $scope.formState = {
+            success: undefined
+        };
 
         this.tableParams = $scope.tableParams = new NgTableParams({
             page: 1, // show first page
@@ -69,6 +74,8 @@ export class ProductionController {
 
     add(entry) {
         if (this.form.$invalid) {
+            this.formState.success = false;
+            angular.element('[name="' + this.form.$name + '"]').find('.ng-invalid:visible:first').focus();
             return false;
         }
 
@@ -87,10 +94,14 @@ export class ProductionController {
         });
 
         this.form.$setPristine(true);
+
+        //save true
+        this.formState.success = true;
     }
 
     edit(id, entry) {
         if (this.form.$invalid) {
+            angular.element('[name="' + this.form.$name + '"]').find('.ng-invalid:visible:first').focus();
             return false;
         }
 

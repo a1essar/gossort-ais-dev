@@ -5,7 +5,7 @@
     </ul>
 </div>
 <div class="container-fluid">
-    <form class="form" name="production.form">
+    <form class="form" name="production.form" novalidate>
         <fieldset>
             <legend>Общая информация</legend>
             <div class="row">
@@ -13,15 +13,13 @@
                     <div class="form-group">
                         <label>ГСУ</label>
                         <div class="has-feedback">
-                            <select class="form-control" select2 data-lazy-init="entry.common['input8']" ng-options="option for option in gsuList track by option" ng-model="entry.common['input8']" ng-init="entry.common['input8']=entry.common['input8']"></select>
-                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                            <select class="form-control" ng-options="option for option in gsuList track by option" ng-model="entry.common['input8']" ng-init="entry.common['input8']=entry.common['input8']"></select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Кадастровый номер</label>
                         <div class="has-feedback">
-                            <input type="text" class="form-control" ng-model="entry.common['input1']" ng-init="entry.common['input1']=entry.common['input1']" placeholder="" required>
-                            <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
+                            <input type="text" class="form-control" ng-model="entry.common['input1']" ng-init="entry.common['input1']=entry.common['input1']" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,7 +32,7 @@
                     <div class="form-group">
                         <label>Вид разрешенного использования</label>
                         <div class="has-feedback">
-                            <select class="form-control" ng-options="option for option in ['', 'Для сортоиспытания сельскохозяйственных культур']" ng-model="entry.common['input3']" ng-init="entry.common['input3']=entry.common['input3']"></select>
+                            <select class="form-control" ng-options="option for option in ['Для сортоиспытания сельскохозяйственных культур']" ng-model="entry.common['input3']" ng-init="entry.common['input3']=entry.common['input3']" required></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>
@@ -43,7 +41,7 @@
                     <div class="form-group">
                         <label>Категория деятельности и структура использования земель</label>
                         <div class="has-feedback">
-                            <select class="form-control" select2 data-lazy-init="entry.common['input4']" multiple="multiple" ng-options="option.value group by option.category for option in productionConfig['category-activity']" ng-model="entry.common['input4']" ng-init="entry.common['input4']=entry.common['input4']" multiple></select>
+                            <select class="form-control" ng-options="option.value group by option.category for option in productionConfig['category-activity'] track by option.category + ';' + option.value" ng-model="entry.common['input4']" ng-init="entry.common['input4']=entry.common['input4']" multiple required></select>
                             <span class="glyphicon glyphicon-exclamation-sign form-control-feedback" title="Обязательное поле"></span>
                         </div>
                     </div>

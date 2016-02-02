@@ -10,6 +10,7 @@ import { LoginController } from './login/login.controller';
 import { NavbarDirective } from './components/navbar/navbar.directive';
 import { select2Directive } from './components/select2.directive';
 import { datepickerDirective } from './components/datepicker.directive';
+import { inputMaskDirective } from './components/input-mask.directive';
 import { dataService } from './components/data.service';
 
 angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'irontec.simpleChat'])
@@ -26,4 +27,5 @@ angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize
     .directive('aisNavbar', NavbarDirective)
     .directive('select2', select2Directive)
     .directive('datepicker', datepickerDirective)
+    .directive('inputMask', inputMaskDirective)
     .service('appData', dataService);

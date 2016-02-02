@@ -174,32 +174,32 @@
         </div>
         <div class="form-group">
             <label>Площадь <small>га</small></label>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input3']" ng-init="fieldset['input3']=''" placeholder="" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input3" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input3']" ng-init="fieldset['input3']=''" placeholder="" value="">
             </div>
         </div>
         <div class="form-group">
             <label>Валовый сбор <small>ц</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input4']" ng-init="fieldset['input4']=''" placeholder="План" value="">
+                        <input type="text" name="fieldset-{{$id}}-input4" input-mask ng-pattern="'^[ 0-9]+$'" class="form-control" ng-model="fieldset['input4']" ng-init="fieldset['input4']=''" placeholder="План" value="">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input5']" ng-init="fieldset['input5']=''" placeholder="Факт" value="">
+                        <input type="text" name="fieldset-{{$id}}-input5" input-mask ng-pattern="'^[ 0-9]+$'" class="form-control" ng-model="fieldset['input5']" ng-init="fieldset['input5']=''" placeholder="Факт" value="">
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label>Урожайность <small>ц/га</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input6']" ng-init="fieldset['input6']=''" placeholder="План" value="">
+                        <input type="text" name="fieldset-{{$id}}-input6" input-mask ng-pattern="'^[ 0-9]+$'" class="form-control" ng-model="fieldset['input6']" ng-init="fieldset['input6']=''" placeholder="План" value="">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input7']" ng-init="fieldset['input7']=''" placeholder="Факт" value="">
+                        <input type="text" name="fieldset-{{$id}}-input7" input-mask ng-pattern="'^[ 0-9]+$'" class="form-control" ng-model="fieldset['input7']" ng-init="fieldset['input7']=''" placeholder="Факт" value="">
                     </div>
                 </div>
             </div>
@@ -208,68 +208,68 @@
     <div class="col-sm-4">
         <div class="form-group">
             <label>Реализовано <small>ц</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input8']" ng-init="fieldset['input8']=''" placeholder="План" value="">
+                        <input type="text" name="fieldset-{{$id}}-input8" input-mask ng-pattern="'^[ 0-9]+$'" class="form-control" ng-model="fieldset['input8']" ng-init="fieldset['input8']=''" placeholder="План" value="">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input9']" ng-init="fieldset['input9']=''" placeholder="Факт" value="">
+                        <input type="text" name="fieldset-{{$id}}-input9" input-mask ng-pattern="'^[ 0-9]+$'" class="form-control" ng-model="fieldset['input9']" ng-init="fieldset['input9']=''" placeholder="Факт" value="">
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label>Получено средств <small>руб</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input10']" ng-init="fieldset['input10']=''" placeholder="План" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input10" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input10']" ng-init="fieldset['input10']=''" placeholder="План" value="">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input11']" ng-init="fieldset['input11']=''" placeholder="Факт" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input11" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input11']" ng-init="fieldset['input11']=''" placeholder="Факт" value="">
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label>Переходящий остаток <small>ц</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input12']" ng-init="fieldset['input12']=''" placeholder="План" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input12" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input12']" ng-init="fieldset['input12']=''" placeholder="План" value="">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input13']" ng-init="fieldset['input13']=''" placeholder="Факт" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input13" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input13']" ng-init="fieldset['input13']=''" placeholder="Факт" value="">
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label>Использование удобрений <small>кг/га по д.в.</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" ng-model="fieldset['input14']" ng-init="fieldset['input14']=''" placeholder="N" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input14" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input14']" ng-init="fieldset['input14']=''" placeholder="N" value="">
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" ng-model="fieldset['input15']" ng-init="fieldset['input15']=''" placeholder="P" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input15" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input15']" ng-init="fieldset['input15']=''" placeholder="P" value="">
                     </div>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" ng-model="fieldset['input16']" ng-init="fieldset['input16']=''" placeholder="K" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input16" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input16']" ng-init="fieldset['input16']=''" placeholder="K" value="">
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label>Число сортоопытов <small>шт.</small></label>
-            <div class="has-feedback">
+            <div class="filedset-controll-group">
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input17']" ng-init="fieldset['input17']=''" placeholder="План" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input17" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input17']" ng-init="fieldset['input17']=''" placeholder="План" value="">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" ng-model="fieldset['input18']" ng-init="fieldset['input18']=''" placeholder="Факт" value="">
+                        <input type="text" class="form-control" name="fieldset-{{$id}}-input18" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input18']" ng-init="fieldset['input18']=''" placeholder="Факт" value="">
                     </div>
                 </div>
             </div>
@@ -278,23 +278,23 @@
     <div class="col-sm-4">
         <div class="form-group">
             <label>Гибель по причине <small>га</small></label>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input19']" ng-init="fieldset['input19']=''" placeholder="засуха" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input19" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input19']" ng-init="fieldset['input19']=''" placeholder="засуха" value="">
             </div>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input20']" ng-init="fieldset['input20']=''" placeholder="вымерзание" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input20" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input20']" ng-init="fieldset['input20']=''" placeholder="вымерзание" value="">
             </div>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input21']" ng-init="fieldset['input21']=''" placeholder="выперание" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input21" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input21']" ng-init="fieldset['input21']=''" placeholder="выперание" value="">
             </div>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input22']" ng-init="fieldset['input22']=''" placeholder="поражение болезнями" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input22" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input22']" ng-init="fieldset['input22']=''" placeholder="поражение болезнями" value="">
             </div>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input23']" ng-init="fieldset['input23']=''" placeholder="повреждение с/х вредителями" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input23" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input23']" ng-init="fieldset['input23']=''" placeholder="повреждение с/х вредителями" value="">
             </div>
-            <div class="has-feedback">
-                <input type="text" class="form-control" ng-model="fieldset['input24']" ng-init="fieldset['input24']=''" placeholder="прочее" value="">
+            <div class="filedset-controll-group">
+                <input type="text" class="form-control" name="fieldset-{{$id}}-input24" input-mask ng-pattern="'^[ 0-9]+$'" ng-model="fieldset['input24']" ng-init="fieldset['input24']=''" placeholder="прочее" value="">
             </div>
         </div>
     </div>
