@@ -1,17 +1,17 @@
 /* global malarkey:false, moment:false */
 
-import { config } from './index.config';
-import { routerConfig } from './index.route';
-import { runBlock } from './index.run';
-import { MainController } from './main/main.controller';
-import { ProductionController } from './production/production.controller';
-import { formFieldsetDirective } from './production/form-fieldset.directive';
-import { LoginController } from './login/login.controller';
-import { NavbarDirective } from './components/navbar/navbar.directive';
-import { select2Directive } from './components/select2.directive';
-import { datepickerDirective } from './components/datepicker.directive';
-import { inputMaskDirective } from './components/input-mask.directive';
-import { dataService } from './components/data.service';
+import { config } from './index.config.js';
+import { routerConfig } from './index.route.js';
+import { runBlock } from './index.run.js';
+import { MainController } from './main/main.controller.js';
+import { ProductionController } from './production/production.controller.js';
+import { formFieldsetDirective } from './production/form-fieldset.directive.js';
+import { LoginController } from './login/login.controller.js';
+import { NavbarDirective } from './components/navbar/navbar.directive.js';
+import { select2Directive } from './components/select2.directive.js';
+import { datepickerDirective } from './components/datepicker.directive.js';
+import { inputMaskDirective } from './components/input-mask.directive.js';
+import { dataService } from './components/data.service.js';
 
 angular.module('aisTemplates', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ngTable', 'ngStorage', 'angular.filter', 'irontec.simpleChat'])
     .constant('moment', window.moment)

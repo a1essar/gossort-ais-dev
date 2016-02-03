@@ -11,6 +11,8 @@ var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
 
+var nodemon = require('gulp-nodemon');
+
 function browserSyncInit(baseDir, browser) {
     browser = browser === undefined ? 'default' : browser;
 
@@ -37,8 +39,8 @@ function browserSyncInit(baseDir, browser) {
 
     browserSync.instance = browserSync.init({
         startPath: '/',
-        server: server,
-        browser: browser
+        browser: browser,
+        proxy: "http://localhost:8080"
     });
 }
 
@@ -49,7 +51,7 @@ browserSync.use(browserSyncSpa({
     }
 }));
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('serve', ['watch', 'nodemon'], function () {
     browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 
@@ -63,4 +65,19 @@ gulp.task('serve:e2e', ['inject'], function () {
 
 gulp.task('serve:e2e-dist', ['build'], function () {
     browserSyncInit(conf.paths.dist, []);
+});
+
+gulp.task('nodemon', function (cb) {
+    var started = false;
+
+    return nodemon({
+        script: './src/server/index.js'
+    }).on('start', function () {
+        // to avoid nodemon being started multiple times
+        // thanks @matthisk
+        if (!started) {
+            cb();
+            started = true;
+        }
+    });
 });
