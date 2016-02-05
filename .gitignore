@@ -6,3 +6,4 @@ coverage/
 .tmp/
 utils/
 dist/
+tools/

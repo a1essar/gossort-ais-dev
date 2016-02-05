@@ -6,17 +6,20 @@
                     <h4 class="modal-title">Авторизация</h4>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form name="login.form" novalidate>
                         <div class="form-group">
                             <label for="fromField1">Филиал</label>
-                            <select id="fromField1" class="form-control" ng-options="option for option in branchList" ng-model="login.branch" ng-init="login.branch=branchList[0]"></select>
+                            <select id="fromField1" class="form-control" name="login" ng-options="option for option in branchList" ng-model="login.formData.login" ng-init="login.formData.login=branchList[0]" required></select>
                         </div>
                         <div class="form-group">
                             <label for="fromField2">Пароль</label>
-                            <input id="fromField2" class="form-control" ng-model="login.password" ng-init="login.password='test'" type="password" placeholder="Пароль">
+                            <input id="fromField2" class="form-control" name="password" ng-model="login.formData.password" ng-init="login.formData.password='test'" type="password" placeholder="Пароль" required>
                         </div>
-                        <button class="btn btn-primary" ng-click="login.submit(login)">Войти</button>
-                        <!--&nbsp;<button class="btn btn-default">Войти как администратор</button>-->
+                        <div class="form-group">
+                            <button class="btn btn-primary" ng-click="login.submit(login.formData)">Войти</button>
+                            <!--&nbsp;<button class="btn btn-default">Войти как администратор</button>-->
+                        </div>
+                        <div class="alert alert-danger animated shake" ng-show="formError['wrong-password']" role="alert">Неправильный пароль</div>
                     </form>
                 </div>
             </div><!-- /.modal-content -->

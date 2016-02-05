@@ -1,4 +1,4 @@
-export function runBlock ($log, $rootScope, $localStorage, _) {
+export function runBlock ($log, $location, $rootScope, $localStorage, _) {
     'ngInject';
 
     $localStorage.$default({
@@ -8,6 +8,19 @@ export function runBlock ($log, $rootScope, $localStorage, _) {
     $rootScope.commonData = $localStorage.commonData;
 
     $rootScope._ = _;
+
+    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+        if (!$rootScope.commonData.auth) {
+            $location.path('/login');
+        }
+    });
+
+    $rootScope.logout = function() {
+        $rootScope.commonData.currentBranch = '';
+        $rootScope.commonData.auth = false;
+
+        $location.path('/login');
+    };
 
     $rootScope._.mixin({
         'arraySumByField' : function(data, field) {

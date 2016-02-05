@@ -1,15 +1,31 @@
-// base setup
-var env = process.env.NODE_ENV || 'dev';
+// load external libs
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var compression = require('compression');
 var serveStatic = require('serve-static');
-var config = require('./config')[env];
+var mongoose = require('mongoose');
+
+// initial app
+var env = process.env.NODE_ENV || 'dev';
+var port = process.env.PORT || 8080;
 var app = express();
 
-var port = process.env.PORT || 8080;
+// base
+var config = require('./config')[env];
+var utils = require('./utils');
 
+// app components
+var login = require('./login/login.router');
+
+// configure DB
+try {
+    mongoose.connect('mongodb://localhost:27017/ais');
+} catch (error) {
+    console.log(error.message);
+}
+
+// base setup
 app.use(compression({
     level: 1
 }));
@@ -23,15 +39,8 @@ if (env === 'dev') {
     app.use('/assets', serveStatic('./src/client/assets'));
 }
 
-// test app
-var router = express.Router();
-
-router.get('/entries', function(request, response) {
-    response.json({'foo': 'bar'});
-});
-
 // register routes
-app.use('/api', router);
+app.use('/api/login', login);
 
 // start server
 app.listen(port);
