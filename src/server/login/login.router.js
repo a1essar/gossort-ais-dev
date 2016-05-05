@@ -6,12 +6,15 @@ var utils = require('../utils');
 
 var User = require('../user/user.model.js');
 
+// todo: add session
 router.post('/', function(request, response) {
     if (!request.body.login) {
+        response.json({'error': {'message': 'ошибка'}});
         return false;
     }
 
     if (!request.body.password) {
+        response.json({'error': {'message': 'ошибка'}});
         return false;
     }
 
